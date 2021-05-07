@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
+</head>
+<body>
+  <main>
+    <div id="map" style="width:500px;height:400px;"></div>
+    <ul>
+      <li>이름 : 이재준</li>
+      <li>학과 : 융합소프트웨어 학부 데이터테크놀로지 전공</li>
+      <li>나이 : 25</li>
+      <li>취미 : 검도</li>
+      <li>좋아하는 활동이나 음식 3가지</li>
+      <ol>
+        <li>러닝</li>
+        <li>멍 때리기</li>
+        <li>돈가스</li>
+      </ol>
+      <li>오늘하면서 느낀점 : Gather 너무 신기해요 !!</li>
+    </ul>
+    <a href="home.html">Home으로 이동하기</a>
+  </main>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=myAppKey"></script>
+	<script>
+    var mapContainer = document.getElementById('map'), 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.613027, 127.068421), 
+            level: 4 
+        };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); 
+    var imageSrc = 'likelion_mju.png', 
+        imageSize = new kakao.maps.Size(64, 69), 
+        imageOption = {offset: new kakao.maps.Point(27, 69)};
+          
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(37.613027, 127.068421); 
+
+    var marker = new kakao.maps.Marker({
+        position: markerPosition, 
+        image: markerImage
+    });
+    marker.setMap(map);
+	</script>
+</body>
+<style>
+  #map{
+    margin: 5%;
+    border-style: solid;
+  }
+</style>
+</html>

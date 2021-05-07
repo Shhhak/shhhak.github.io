@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>준석이라 쓰고 샥이라 읽소</title>
+</head>
+<body>
+  <h1>페어프로그래밍 중~~</h1>
+  <div id="map" style="width: 500px; height: 400px"></div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=myAppKey"
+    ></script>
+    <script>
+
+      var mapContainer = document.getElementById('map'), 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.231269083690904, 127.18798678261918),
+            level: 4 
+        };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); 
+      var imageSrc = 'likelion_mju.png', 
+          imageSize = new kakao.maps.Size(64, 69), 
+          imageOption = {offset: new kakao.maps.Point(27, 69)};
+            
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+          markerPosition = new kakao.maps.LatLng(37.231269083690904, 127.18798678261918); 
+
+      var marker = new kakao.maps.Marker({
+          position: markerPosition, 
+          image: markerImage
+      });
+      marker.setMap(map);
+    </script>
+  <ul>
+    <li>이름 : 이준석</li>
+    <li>학과 : 바둑학과</li>
+    <li>나이 : 스물넷</li>
+    <li>취미 : 농구랑 이것저것</li>
+    <li>좋아하는 음식</li>
+      <ol>
+        <li>야식의 끝 치킨</li>
+        <li>갑자기 먹고싶다 탕수육</li>
+        <li>닭가슴살!?</li>
+      </ol>
+    <li>오늘 한줄평 : 아,, 팀원분 너무 잘한다,, 다들 너무 잘한다,, 화이팅 해야겠다..!!</li>
+  </ul>
+  <a href="home.html">Home으로 이동하기</a>
+</body>
+</html>
